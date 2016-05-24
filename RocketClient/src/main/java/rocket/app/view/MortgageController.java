@@ -91,9 +91,6 @@ public class MortgageController {
 	// Call this when btnPayment is pressed, calculate the payment
 	@FXML
 	public void btnCalculatePayment(ActionEvent event) throws RateException {
-		Object message = null;
-		// TODO - RocketClient.RocketMainController
-
 		Action a = new Action(eAction.CalculatePayment);
 		LoanRequest lq = new LoanRequest();
 		// TODO - RocketClient.RocketMainController
@@ -141,14 +138,11 @@ public class MortgageController {
 		// Display dPayment on the form, rounded to two decimal places
 
 		double income = Double.parseDouble(txtIncome.getText());
-		double expense = Double.parseDouble(txtExpenses.getText());
-		
-		double PMT = lRequest.getdPayment();			
-		double roundedPMT = (Math.round(PMT*100.0)/100.0);		
-		
+		double expenses = Double.parseDouble(txtExpenses.getText());
+				
+		double roundedPMT = (Math.round(lRequest.getdPayment()*100.0)/100.0);		
 		double Rate = lRequest.getdRate();
-
-		if (roundedPMT >= income * 0.28 || roundedPMT >= (income * 0.36 - expense)) {
+		if (roundedPMT >= income * 0.28 || roundedPMT >= (income * 0.36 - expenses)) {
 			errorMessageLabel.setText("House Cost too high");
 		} else {
 			String textPMT = Double.toString(roundedPMT);
