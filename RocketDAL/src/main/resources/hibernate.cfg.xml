@@ -5,9 +5,9 @@
  <session-factory>
   <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
   
-   <property name="hibernate.default_schema">Bert</property>
-  <property name="hibernate.connection.username">Bert</property>
-  <property name="hibernate.connection.password">Circuit1</property>
+   <property name="hibernate.default_schema">HOUG</property>
+  <property name="hibernate.connection.username">HOUG</property>
+  <property name="hibernate.connection.password">pickapasswordofyourchoosing</property>
   <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>  
   
 <!--   <property name="hibernate.default_schema">YourUserName</property>
